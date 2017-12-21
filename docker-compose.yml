@@ -17,14 +17,14 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-      MYSQL_DATABASE: hcis_development
+      MYSQL_DATABASE: geekineers
   redis:
     image: redis
     ports:
       - 6379:6379
   worker: &app_base
     build: .
-    image: hcis
+    image: rails
     command: bundle exec sidekiq
     volumes:
       - .:/usr/src/app
